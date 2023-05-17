@@ -1,0 +1,15 @@
+body {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.listas {
+    text-align: left;
+}
+.envio {
+    list-style-type: none;
+    text-align: left;
+}
