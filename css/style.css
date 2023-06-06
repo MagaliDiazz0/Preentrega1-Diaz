@@ -6,10 +6,16 @@ body {
     min-height: 100vh;
 }
 
-.listas {
+.listas-hoodies {
     text-align: left;
 }
 .envio {
     list-style-type: none;
     text-align: left;
+}
+
+.listas-hoodies img {
+    height: 10%;
+    width: 10%;
+
 }

@@ -40,7 +40,7 @@ function consultarPrendas() {
 let envioMontevideo = 100
 let envioInterior = 200
 
-function consultar$Envio (){
+function consultarPrecioEnvio (){
     let zona = prompt("¿Vives en zona Montevideo o Interior?")
     if (zona === "Montevideo") {
         console.log("El costo de envío dentro de Montevideo es de" + envioMontevideo)
