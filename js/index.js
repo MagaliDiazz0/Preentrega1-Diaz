@@ -1,52 +1,42 @@
-const totalCuotas  = 6
+const tableBody = document.querySelector('tbody')
+const inputSearch = document.querySelector('input#inputSearch')
 
-
-function mostrarCuotas (){
-    console.log ("TODAS NUESTRAS PRENDAS TIENEN 👇")
-    for(let i = 0; i < totalCuotas; i++) {
-        console.log((i+1) +  "cuotas sin interés.")
-    
+const armarFilaHTML = (prod)=> {
+    return `<tr>
+                <td class="class-table-number">${prod.id}</td>
+                <td class="imgProductos"><img src="${prod.imagen}"</td>
+                <td>${prod.nombre}</td>
+                <td>$ ${prod.precio}</td>
+                <td><button id="${prod.id}" class="button button-outline button-big-emoji">❤️</button></td>
+            </tr>`
 }
+
+const filtrarProductos = ()=> {
+    let arrayResultado = prendas.filter((producto)=> producto.nombre.toLowerCase().includes(inputSearch.value.trim().toLowerCase()))
+    if (arrayResultado.length > 0) {
+        cargarProductos(arrayResultado)
+    }
+}
+inputSearch.addEventListener('search', filtrarProductos)
+
+const cargarProductos = (array)=> {
+    tableBody.innerHTML = ''
+    array.forEach((producto) => {
+        tableBody.innerHTML += armarFilaHTML(producto)
+    })
+    activarClickEnBotonesFav()
 }
 
-function mostrarPrecio(codigo) {
-    switch (parseInt(codigo)) {
-        case 1:
-            alert("Hoodies basicas $2600")
-            break;
-        case 2:
-            alert("Hoddies estampadas $3200")
-            break;
-        default:
-             alert("Ingresa un numero de prenda válido.")
-            break;
+const activarClickEnBotonesFav = ()=> {
+    const botonesFav = document.querySelectorAll('button.button.button-outline.button-big-emoji')
+    for (let botonFav of botonesFav) {
+        botonFav.addEventListener('click', ()=> {
+            let resultadoProducto = prendas.find((prod)=> prod.id === parseInt(botonFav.id))
+            favoritos.push(resultadoProducto)
+            guardarEnLocalStorage()
+            mostrarMensajes(`El producto ${resultadoProducto.nombre} se guardó en favoritos...`, 'green')
+        })
     }
 }
 
-function consultarPrendas() {
-    let respuesta = confirm("¿Deseas conocer el precio de alguna prenda?")
-    if (respuesta) {
-        let codigo = prompt("Ingresa el código numérico de la prenda a consultar:")
-            if (codigo) {
-                mostrarPrecio(codigo)
-                mostrarCuotas()
-            }
-    } else {
-        console.warn("No hay problema. Te esperamos en otro momento.")
-    }
-}
-
-
-let envioMontevideo = 100
-let envioInterior = 200
-
-function consultarPrecioEnvio (){
-    let zona = prompt("¿Vives en zona Montevideo o Interior?")
-    if (zona === "Montevideo") {
-        console.log("El costo de envío dentro de Montevideo es de" + envioMontevideo)
-    } else if (zona === "Interior") {
-        console.log("El costo de envío al interior es de" + envioInterior)
-    } else {
-        console.log("Vuelve a ingresar")
-    }
-}
+cargarProductos(prendas)

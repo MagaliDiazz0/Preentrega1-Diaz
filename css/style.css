@@ -1,21 +1,48 @@
-body {
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css');
+
+html {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    margin: 8px;
+}
+
+p,
+select,
+input,
+span {
+    font-size: large;
+}
+
+table {
+    width: 90% !important;
+    margin-left: 5%;
+}
+
+.imgProductos {
+    width: 150px;
+    height: 150px;
+}
+
+thead {
+    font-weight: 800;
+    font-size: larger;
+}
+
+tbody tr:hover {
+    background: rgba(8, 214, 187, 0.925);
+}
+
+.button-big-emoji {
+    font-size: x-large;
+}
+
+.toast-msg {
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.listas-hoodies {
-    text-align: left;
-}
-.envio {
-    list-style-type: none;
-    text-align: left;
-}
-
-.listas-hoodies img {
-    height: 10%;
-    width: 10%;
-
+    justify-content: center;
+    padding: 10px;
+    height: 46px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    color: whitesmoke;
+    border-radius: 6px;
 }
