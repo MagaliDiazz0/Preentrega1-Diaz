@@ -6,13 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crystal.uy</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script defer src="./js/index.js"></script>
     <script src="./js/productos.js"></script>
-    
 </head>
 <body>
-    <H1> Bienvenido/a a Crystal.uy</H1>
-    <h2> <i>Conoce tu nueva Hoodie favorita❤️‍🔥</i> </h2>
+    <h1> Te damos la bienvenida a Crystal.uy🤗</h1>
+    <div>
+        <td><button id="verCarrito" class="button button-outline">🛒</button></td>
+    </div>
+
     <ol class="listas-hoodies"> 
         <hr>
         <input type="search" id="inputSearch" placeholder="🔍 Nombre del producto a buscar">
@@ -24,22 +29,21 @@
                     <th>Código</th>
                     <th>Imagen</th>
                     <th>Descripción</th>
-                    <th>importe</th>
-                    <th>Favs</th>
+                    <th>Importe</th>
+                    <th>Agregar al Carrito</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td class="class-table-number">${prod.id}</td>
-                    <td class="imgProductos">${prod.imagen}</td>
-                    <td>${prod.nombre}</td>
-                    <td>$ ${prod.precio}</td>
-                    <td><button id="${prod.id}" class="button button-outline button-big-emoji">🤍</button></td>
+                    <td class="class-table-number">${prendas.id}</td>
+                    <td class="imgProductos">${prendas.imagen}</td>
+                    <td>${prendas.nombre}</td>
+                    <td>$ ${prendas.precio}</td>
+                    <td><button id="${prendas.id}" class="button button-outline">comprar</button></td>
                 </tr>
             </tbody>
         </table>
     <hr>
-    <p> Realizamos envíos dentro de Montevideo y al Interior</p>
-  <ol class="envios"></ol>
+    <div id="modal-container" class="modal-container"></div>
 </body>
 </html>

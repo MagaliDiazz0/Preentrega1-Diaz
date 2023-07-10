@@ -6,6 +6,10 @@ html {
     margin: 8px;
 }
 
+h1 {
+    text-align: center;
+  }
+
 p,
 select,
 input,
@@ -15,7 +19,7 @@ span {
 
 table {
     width: 90% !important;
-    margin-left: 5%;
+    margin-left: 10%;
 }
 
 .imgProductos {
@@ -32,7 +36,7 @@ tbody tr:hover {
     background: rgba(8, 214, 187, 0.925);
 }
 
-.button-big-emoji {
+.button-outline {
     font-size: x-large;
 }
 
@@ -45,4 +49,81 @@ tbody tr:hover {
     background-color: rgb(255, 255, 255);
     color: whitesmoke;
     border-radius: 6px;
+}
+
+#verCarrito {
+    float: right;
+  }
+
+.modal-container {
+    width: 60%;
+    margin: 0 10%;
+    max-height: 50vh;
+    color: aquamarine;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    overflow: auto;
+    z-index: 9;
+    top: 12vh;
+    scrollbar-color: none;
+}
+
+.modal-container ::-webkit-scrollbar {
+    display: none;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    color: blanchedalmond;
+    width: 100%;
+
+}
+
+.modal-header-title {
+    justify-self: start;
+}
+
+.modal-header-button {
+    cursor: pointer;
+}
+
+.modal-container > .modal-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    margin: 10px;
+
+}
+
+.modal-container > div > img {
+    height: 120px;
+    width: 120px;
+}
+
+.total.content {
+    font-size: 25px;
+    padding: 20px;
+    text-align: center;
+    padding-top: 20px;
+}
+.eliminar-prenda { 
+    cursor: pointer;
+}
+
+
+.swal2-popup {
+    font-size: 18px;
+}
+
+.swal2-popup .swal2-styled:not([type="file"]),
+.swal2-popup .swal2-styled[type="file"]::file-selector-button {
+    font-size: 30px; 
+    padding: 40px 50px;
 }
